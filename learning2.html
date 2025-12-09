@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>test</title>
+  <style>
+    :root{
+      --bg: #f2f7f6;
+      --panel: #e6efee;
+      --card: #d7d7d7;
+      --accent: #c9e7e3;
+      --muted: #666;
+      --maxw: 920px;
+      --gap: 16px;
+    }
+
+    
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #fff;
+      color: #222;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+      padding:28px 12px;
+    }
+
+    
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--bg);
+      padding:28px;
+      border-radius:8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    
+    .panel{
+      background:var(--panel);
+      border: 1px solid rgba(0,0,0,0.06);
+      padding:18px;
+      text-align:center;
+      margin-bottom:var(--gap);
+      border-radius:4px;
+      min-height:48px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo{
+      font-weight:600;
+      letter-spacing:1px;
+    }
+
+    .header{
+      font-weight:500;
+    }
+
+    .text-area{
+      min-height:80px;
+      color:var(--muted);
+    }
+
+    
+    .boxes{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:var(--gap);
+      margin-bottom:var(--gap);
+      align-items:stretch;
+    }
+
+    .box{
+      background:var(--card);
+      border: 1px solid rgba(0,0,0,0.06);
+      min-height:160px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:4px;
+      font-weight:500;
+      color: #666;
+    }
+
+    
+    .footer{
+      background:var(--panel);
+      padding:14px;
+      text-align:center;
+      border-radius:4px;
+      font-size:0.95rem;
+      color:var(--muted);
+    }
+
+    
+    .panel + .panel { box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
+
+    
+    @media (max-width:720px){
+      .boxes{ grid-template-columns: 1fr; }
+    }
+
+    
+    @media (min-width:1100px){
+      :root{ --maxw:1100px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main" aria-label="Simple layout demo">
+    <div class="panel logo">Logo</div>
+
+    <div class="panel header">Header</div>
+
+    <div class="panel text-area">
+      <div style="max-width:780px; text-align:center;">
+        Text Area 
+      </div>
+    </div>
+
+    <section class="boxes" aria-label="Three columns">
+      <div class="box">Box1</div>
+      <div class="box">Box2</div>
+      <div class="box">Box3</div>
+    </section>
+
+    <div class="footer">Footer</div>
+  </main>
+</body>
+</html>
